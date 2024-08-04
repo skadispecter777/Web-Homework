@@ -29,11 +29,12 @@ function Login() {
     //         console.error('请求错误了喵',error);
     //     }
     // };
-
+    
+    //纯前端
     const handleSubmit=()=>{
         if(username==='Neal'&&password==='12345678'){
             // alert('登录成功');
-            history('/list');
+            history('/task');
         }
         else if(username===''||password===''){
             alert('用户名或密码为空');
@@ -44,7 +45,8 @@ function Login() {
     }
     return (
         <>
-            <div class="login-header">
+        <div className="login-page">
+        <div class="login-header">
                 <p>尼尔敏捷看板</p>
             </div>
             <form id="loginForm" onSubmit={handleSubmit}>
@@ -65,6 +67,8 @@ function Login() {
             <div class="login-tail">
                 <p>您每使用一次敏捷看板，都能助你更高效完成任务</p>
             </div>
+        </div>
+            
         </>
     )
 }

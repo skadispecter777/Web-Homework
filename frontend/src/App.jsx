@@ -6,7 +6,7 @@ import * as util_request from './request/util.request'
 import * as websocket_client from './request/client.websocket'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Login from './login'
-import List from './list'
+import Task from './task'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -45,13 +45,13 @@ function App() {
               </p>
               <div>
                 <nav>
-                  <Link to="/login">登录</Link>
+                  <Link to="/login" class="to-login">登录</Link>
                 </nav>
               </div>
             </>}/>
 
             <Route path="/login" element={<Login/>}/>
-            <Route path="/list" element={<List/>}/>    
+            <Route path="/task" element={<Task/>}/>    
           </Routes>
         </div>
       </Router>
