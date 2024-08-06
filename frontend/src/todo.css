@@ -1,0 +1,17 @@
+.for-each-todo-thing{
+    background-color: rgb(158, 202, 240);
+    margin-right: 25px;
+    margin-top: 15px;
+}
+
+.todo-things-label{
+    font-size: 24px;
+    margin-top:10px;
+}
+
+.edit-to-do{
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    border: solid;
+}
