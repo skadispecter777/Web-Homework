@@ -16,7 +16,9 @@ function App() {
     console.log(title)
     setTitle(result);
   })
-
+  
+  const data=[];
+  
   return (
     <>
       <Router>
@@ -51,7 +53,7 @@ function App() {
             </>}/>
 
             <Route path="/login" element={<Login/>}/>
-            <Route path="/task" element={<Task/>}/>    
+            <Route path="/task" element={<Task tasks={data}/>}/>    
           </Routes>
         </div>
       </Router>
