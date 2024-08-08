@@ -5,8 +5,6 @@
     
 }
 
-
-
 .input-things-button{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -14,10 +12,12 @@
     background-color: pink;
 }
 
-
-
 .todo-list{
     background-color: white;
     border:solid;
     border-color:red;
+}
+
+.private{
+    color:orangered;
 }

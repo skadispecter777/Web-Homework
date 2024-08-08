@@ -12,14 +12,14 @@ function Todo(things) {
                     </label>
                 </div>
                 <div class="edit-buttons">
-                    <button type="button" class="edit-to-do">
+                    <button type="button" class="edit-to-do" onClick={()=>{if(!things.isOngoing){things.set_task_ongoing(things.id)}}}>
                         移至进行中
                     </button>
                     <button type="button" class="edit-to-do" onClick={()=>things.delete_task(things.id)}>
                         删除
                     </button>
                     <button type="button" class="edit-to-do">
-                        评论
+                        编辑
                     </button>
                 </div>
             </li>
