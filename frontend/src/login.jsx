@@ -4,43 +4,31 @@ import './login.css'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom';
 
-
+axios.defaults.baseURL='http://127.0.0.1:7002';
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const history=useNavigate();
-    //提交 
-    // const handleSubmit = async (submission) => {
-    //     submission.preventDefault();
-    //     try{
-    //         const result=await axios.post('/login',{
-    //             username,
-    //             password,
-    //         });
-    //         if(result.data.success){
-    //             alert('登录成功');
-    //         }
-    //         else{
-    //             alert('登录失败');
-    //         }
-    //     }
-    //     catch(error){
-    //         console.error('请求错误了喵',error);
-    //     }
-    // };
+
     
     //纯前端
-    const handleSubmit=()=>{
-        if(username==='Neal'&&password==='12345678'){
-            // alert('登录成功');
-            history('/task');
+    const handleSubmit=async(event)=>{
+        event.preventDefault();
+        try{
+            const response=await axios.post('/login',{
+                username:username,
+                password:password
+            });
+            if(response.data.success){
+                history('/task');
+            }
+            else{
+                throw new Error('登录失败')
+            }
         }
-        else if(username===''||password===''){
-            alert('用户名或密码为空');
-        }
-        else{
-            alert('登录失败');
+        catch(error){
+            alert(error.message);
         }
     }
     return (

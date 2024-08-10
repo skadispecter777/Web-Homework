@@ -35,7 +35,7 @@ function Task(things) {
     
     function add_task(task_name){
         const new_task={id:`todo-${nanoid()}`,name:task_name,isComplete:false,isOngoing:false};
-        set_tasks([...tasks,new_task]);
+        set_tasks([...tasks,new_task]); 
     }
 
     function delete_task(id){

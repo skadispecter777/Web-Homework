@@ -1,5 +1,5 @@
 export class Task {
-
+    
     private name: string;
 
     description: string;

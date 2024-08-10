@@ -13,7 +13,6 @@ export class APIController {
   @Get('/get_user')
   async getUser(@Query('uid') uid) {
     const user = await this.userService.getUser({
-      uid,
       username: '',
       password: ''
     });
