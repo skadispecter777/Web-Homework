@@ -1,15 +1,16 @@
 export class Task {
-    
-    private name: string;
+    id:string
+    name: any;
 
-    description: string;
+    isComplete: boolean;
 
-    createAt: Date;
+    isOngoing: boolean;
 
-    constructor(name: string, description: string, createAt = new Date()) {
+    constructor(id:string,name: any, isComplete: boolean, isOngoing:boolean) {
+        this.id=id;
         this.name = name;
-        this.description = description;
-        this.createAt = createAt;
+        this.isComplete = isComplete;
+        this.isOngoing =isOngoing;
     }
 
     public getName() {

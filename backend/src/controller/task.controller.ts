@@ -1,4 +1,4 @@
-import { Controller, Get, Inject, Post } from "@midwayjs/core";
+import { Body, Controller, Get, Inject, Post } from "@midwayjs/core";
 import { TaskService } from "../service/task.service";
 import { Task } from "../model/task.model";
 
@@ -8,13 +8,16 @@ export class TaskController {
     @Inject()
     taskService: TaskService;
 
-    @Post('/create')
-    public async create() {
-        const task: Task = new Task("Web Development", "Day 3");
-        this.taskService.create(task);
+    @Post()
+    public async create(@Body() body:{new_task:Task}) {
+        this.taskService.create(body.new_task);
+        return{
+            success:true,
+            message:"创建成功"
+          }
     }
 
-    @Get('/fetch')
+    @Get()
     public async fetch() {
         return this.taskService.fetch();
     }

@@ -11,8 +11,6 @@ function Login() {
     const [password, setPassword] = useState('');
     const history=useNavigate();
 
-    
-    //纯前端
     const handleSubmit=async(event)=>{
         event.preventDefault();
         try{

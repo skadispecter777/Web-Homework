@@ -1,11 +1,13 @@
 import React from "react"
 import {nanoid} from "nanoid"
+import axios from 'axios'
 import './task.css'
 import Todo from './todo'
 import Task_header from "./task-header"
 import Condition_button from "./condition-button"
 import { useState } from "react"
 //任务界面
+axios.defaults.baseURL='http://127.0.0.1:7002';
 const condition_map={
     待办任务:(task)=>!task.isComplete&&!task.isOngoing,
     进行中的任务:(task)=>!task.isComplete&&task.isOngoing,
@@ -33,9 +35,29 @@ function Task(things) {
         isPressed={name===condition}
         set_condition={set_condition}/>))
     
-    function add_task(task_name){
+    async function add_task(task_name){
         const new_task={id:`todo-${nanoid()}`,name:task_name,isComplete:false,isOngoing:false};
-        set_tasks([...tasks,new_task]); 
+        try{
+            const response=await axios.post('/task',{new_task:new_task});
+            if(response.data.success){
+                set_tasks([...tasks,new_task]);
+                try{
+                    const response1=await axios.get('/task');
+                    things.tasks=[...response1.data]
+                    return response1.data;
+                }
+                catch{
+                    alert('获取失败')
+                }
+            }
+            else{
+                throw new Error('创建任务失败')
+            }
+        }
+        catch{
+            alert('失败');
+        }
+         
     }
 
     function delete_task(id){

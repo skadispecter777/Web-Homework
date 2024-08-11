@@ -7,16 +7,20 @@ import * as path from 'path'
 @Provide()
 export class TaskService {
 
-    public async create(task: Task) {
-
-        fs.writeFile(path.join("D:", "task.json"), JSON.stringify(task), () => {
-            console.log("写入成功");
-        })
+    public async create(new_task: Task) {
+        // fs.writeFile(path.join("D:", "task.json"), JSON.stringify(task), () => {
+        //     console.log("写入成功");
+        // })
+        const task_path=path.resolve(__dirname,'../task.storage.json');
+        const tasks=JSON.parse(fs.readFileSync(task_path,'utf-8'));
+        tasks.push(new_task)
+        fs.writeFileSync(task_path,JSON.stringify(tasks,null,2),'utf-8');
     }
 
 
     public fetch(): Task {
-        const data = JSON.parse(fs.readFileSync(path.join("D:", "task.json"), 'utf-8'));
-        return new Task(data["name"], data["description"], data["creatAt"]);
+        const task_path=path.resolve(__dirname,'../task.storage.json');
+        const data = JSON.parse(fs.readFileSync(task_path, 'utf-8'));
+        return data;
     }
 }
