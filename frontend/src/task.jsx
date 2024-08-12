@@ -153,20 +153,20 @@ function Task(things) {
 
     return (
         <>
-            <div class="task-page">
-                <div class="task-title">
+            <div className="task-page">
+                <div className="task-title">
                     <h1>欢迎使用待办清单</h1>
                     <h2>在下方输入框中输入你想要完成的任务</h2>
                 </div>
                 <Task_header add_task={add_task}/>
-                <div class="three-conditions">
+                <div className="three-conditions">
                     {condition_buttons}
                 </div>
-                <ul role="list" class="todo-list" aria-labelledby="list-heading">
+                <ul role="list" className="todo-list" aria-labelledby="list-heading">
                     {task_list}
                 </ul>
                 <div>
-                    <a href="https://www.bilibili.com/video/BV1wx411p73F/?spm_id_from=333.337.search-card.all.click&vd_source=00fde21cc545dada19088a8a24d368b5" class="private">这里通往作者最喜欢的一首歌，不妨听听</a>
+                    <a href="https://www.bilibili.com/video/BV1wx411p73F/?spm_id_from=333.337.search-card.all.click&vd_source=00fde21cc545dada19088a8a24d368b5" className="private">这里通往作者最喜欢的一首歌，不妨听听</a>
                 </div>
             </div>
 

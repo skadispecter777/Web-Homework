@@ -32,25 +32,25 @@ function Login() {
     return (
         <>
         <div className="login-page">
-        <div class="login-header">
+        <div className="login-header">
                 <p>尼尔敏捷看板</p>
             </div>
             <form id="loginForm" onSubmit={handleSubmit}>
-                <div class="login-border">
+                <div className="login-border">
                     <h2>请登录</h2>
-                    <div class="form-input">
+                    <div className="form-input">
                         <label for="username">用户名</label>
                         <input type="text" value={username} onChange={(e)=>setUsername(e.target.value)} />
                     </div>
-                    <div class="form-input">
+                    <div className="form-input">
                         <label for="password">密码</label>
                         <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} />
                     </div>
-                    <button class="login-button" type="submit">登录</button>
+                    <button className="login-button" type="submit">登录</button>
                 </div>
             </form>
 
-            <div class="login-tail">
+            <div className="login-tail">
                 <p>您每使用一次敏捷看板，都能助你更高效完成任务</p>
             </div>
         </div>

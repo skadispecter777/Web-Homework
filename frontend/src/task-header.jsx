@@ -27,7 +27,7 @@ function Task_header(things) {
                 value={name}
                 onChange={create_task}/>
             <br />
-            <button type="submit" class="input-things-button">点击创建待办任务喵</button>
+            <button type="submit" className="input-things-button">点击创建待办任务喵</button>
         </form>
     </>)
 }

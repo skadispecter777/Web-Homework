@@ -24,7 +24,6 @@ export class TaskService {
         fs.writeFileSync(task_path,JSON.stringify(tasks,null,2),'utf-8');
     }
 
-
     public fetch(): Task {
         const task_path=path.resolve(__dirname,'../task.storage.json');
         const data = JSON.parse(fs.readFileSync(task_path, 'utf-8'));

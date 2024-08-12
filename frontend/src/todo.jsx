@@ -4,24 +4,30 @@ import './todo.css';
 function Todo(things) {
     return (
         <>
-            <li class="things-todo">
-                <div class="for-each-todo-thing">
+            <li className="things-todo">
+                <div className="for-each-todo-thing">
                     <input id={things.id} type="checkbox" defaultChecked={things.isComplete} onChange={()=>things.set_task_completed(things.id)}/>
-                    <label class="todo-things-label" htmlFor={things.id}>
+                    <label className="todo-things-label" htmlFor={things.id}>
                         {things.name}
                     </label>
                 </div>
-                <div class="edit-buttons">
-                    <button type="button" class="edit-to-do" onClick={()=>{if(!things.isOngoing){things.set_task_ongoing(things.id)}}}>
+                <div className="edit-buttons">
+                    <button type="button" className="edit-to-do" onClick={()=>{if(!things.isOngoing){things.set_task_ongoing(things.id)}}}>
                         移至进行中
                     </button>
-                    <button type="button" class="edit-to-do" onClick={()=>things.delete_task(things.id)}>
+                    <button type="button" className="edit-to-do" onClick={()=>things.delete_task(things.id)}>
                         删除
                     </button>
-                    <button type="button" class="edit-to-do">
-                        编辑
-                    </button>
                 </div>
+                <form className="comments">
+                    <label>评论</label>
+                    <input type="text"/>
+                    <button type="submit" className="comments-button">上传评论</button>
+                </form>
+                <form className="file">
+                    <label>上传附件</label>
+                    <input type="file"/>
+                </form>
             </li>
         </>
     )

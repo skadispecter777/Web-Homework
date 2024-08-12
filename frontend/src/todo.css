@@ -2,6 +2,7 @@
     background-color: rgb(158, 202, 240);
     margin-right: 25px;
     margin-top: 15px;
+    border:solid;
 }
 
 .todo-things-label{
@@ -14,4 +15,21 @@
     margin-left: 5px;
     margin-bottom: 10px;
     border: solid;
+}
+
+.comments{
+    margin-left:5px;
+    margin-bottom: 10px;
+}
+
+.comments-button{
+    border:solid;
+    height: 35px;
+}
+
+.file{
+    border:solid;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color:rgb(153, 202, 185);
 }

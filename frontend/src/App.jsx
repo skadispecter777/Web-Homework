@@ -24,21 +24,14 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<>
-              <div>
-                <a href="https://vitejs.dev" target="_blank">
-                  <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                  <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-              </div>
+              
               <h1>{title}</h1>
               <div className="card">
                 <button onClick={() => {
                   setCount((count) => count + 1);
                   websocket_client.send("Current Count is: " + count);
                 }}>
-                  你已经点了 {count} 次按钮了
+                  你已经点了 {count} 次按钮了,不要再按了,快去登录吧
                 </button>
               </div>
               <p className="read-the-docs">
@@ -52,7 +45,7 @@ function App() {
             </>}/>
 
             <Route path="/login" element={<Login/>}/>
-            <Route path="/task" element={<Task tasks={data}/>}/>    
+            <Route path="/task" element={<Task tasks={data}/>}/>
           </Routes>
         </div>
       </Router>
