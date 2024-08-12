@@ -17,6 +17,13 @@ export class TaskService {
         fs.writeFileSync(task_path,JSON.stringify(tasks,null,2),'utf-8');
     }
 
+    public async delete_ongoing_completed(remaining_tasks:Task[]){
+        const task_path=path.resolve(__dirname,'../task.storage.json');
+        let tasks=JSON.parse(fs.readFileSync(task_path,'utf-8'));
+        tasks=[...remaining_tasks];
+        fs.writeFileSync(task_path,JSON.stringify(tasks,null,2),'utf-8');
+    }
+
 
     public fetch(): Task {
         const task_path=path.resolve(__dirname,'../task.storage.json');

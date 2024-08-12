@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Inject, Post } from "@midwayjs/core";
+import { Body, Controller, Get, Inject, Post,Put } from "@midwayjs/core";
 import { TaskService } from "../service/task.service";
 import { Task } from "../model/task.model";
 
@@ -17,6 +17,15 @@ export class TaskController {
           }
     }
 
+    @Put()
+    public async delete_ongoing_completed(@Body() body:{remaining_tasks:Task[]}){
+        this.taskService.delete_ongoing_completed(body.remaining_tasks);
+        return{
+            success:true,
+            message:"删除成功"
+        }
+    }
+    
     @Get()
     public async fetch() {
         return this.taskService.fetch();
